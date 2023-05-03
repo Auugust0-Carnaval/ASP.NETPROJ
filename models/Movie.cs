@@ -19,5 +19,6 @@ namespace PAGESNET.models
 
         [Column(TypeName = "decimal(18,2)")] //Adiciona o tipo de coluna na base de dados usando EF, com 18 digitos e duas casa descimais
         public decimal Price { get; set; }
+        public string Rating { get; set; } = string.Empty;
     }
 }

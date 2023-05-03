@@ -39,7 +39,8 @@ namespace PAGESNET.models
                         Title = "When Harry Met Sally",
                         RealeseDate = DateTime.Parse("1984-3-13"),
                         Genre = "Romantic Comedy",
-                        Price = 7.99M
+                        Price = 7.99M,
+                        Rating = "R"
                     },
 
                     new Movie
@@ -47,7 +48,8 @@ namespace PAGESNET.models
                         Title = "Vingadores",
                         RealeseDate = DateTime.Parse("2013-03-22"),
                         Genre = "Fantasy",
-                        Price = 10.22M
+                        Price = 10.22M,
+                        Rating = "R"
                     },
 
                     new Movie
@@ -55,7 +57,8 @@ namespace PAGESNET.models
                         Title = "Vingadores Ultimato",
                         RealeseDate = DateTime.Parse("2021-01-24"),
                         Genre = "Fantasy",
-                        Price = 20.22M
+                        Price = 20.22M,
+                        Rating = "R"
                     },
 
                     new Movie
@@ -63,8 +66,8 @@ namespace PAGESNET.models
                         Title = "Maze runner",
                         RealeseDate = DateTime.Now,
                         Genre = "Action",
-                        Price = 50.99M
-
+                        Price = 50.99M,
+                        Rating = "R"
                     },
 
                     new Movie
@@ -72,7 +75,8 @@ namespace PAGESNET.models
                         Title = "Peter Pan",
                          RealeseDate = DateTime.Today,
                          Genre = "Kids",
-                         Price = 5.00M
+                         Price = 5.00M,
+                        Rating = "R"
                     });
                     context.SaveChanges();
             }
