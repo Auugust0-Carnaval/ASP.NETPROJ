@@ -43,12 +43,14 @@ namespace PAGESNET.Pages_Movies
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+
+            //verefica se o modelo de inserção do usuario é valido para as "regras" estabelecidas pelo programa
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Movie).State = EntityState.Modified;
+            _context.Attach(Movie).State = EntityState.Modified; // o metodo attach() indica ao EF que houve uma alteração na base de dados, e que suas propriedades devem ser alteradas no contexto de dados
 
             try
             {
