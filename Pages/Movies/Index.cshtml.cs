@@ -32,19 +32,14 @@ namespace PAGESNET.Pages_Movies
     
         public async Task OnGetAsync()
         {
-           var movies = from m in _context.Movie
-                select m;
-
-           // operador ! significa diferente, ou seja se a propriedade for diferente de "nulo" ou vazio
-           if(!string.IsNullOrEmpty(SearchString))
-           {    
-                //busca na base de dados, valores iguais a propriedade de entrada (searchString) e compara para pesquisa
+            var movies = from m in _context.Movie
+                        select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
                 movies = movies.Where(s => s.Title.Contains(SearchString));
-           }
+            }
 
-           //Adiciona à lista, contexto de informaçãoes da base de dados
-
-           Movie = await movies.ToListAsync();
+            Movie = await movies.ToListAsync();
         }
     }
     
