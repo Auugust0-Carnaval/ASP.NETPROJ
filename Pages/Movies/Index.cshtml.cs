@@ -25,7 +25,7 @@ namespace PAGESNET.Pages_Movies
 
         [BindProperty(SupportsGet = true)] // uma anotação que permite que a propriedadade seja vinculada a uma solicitação HtppGet
         public string? SearchString { get; set; }
-        public SelectList Genres { get; set; } // anotação que atribui a propiedade uma lista de entrada para o usuario
+        public SelectList Genres { get; set; }// anotação que atribui a propiedade uma lista de entrada para o usuario
 
         [BindProperty(SupportsGet = true)]
         public string? MovieGenre { get; set; }
