@@ -32,12 +32,26 @@ namespace PAGESNET.Pages_Movies
     
         public async Task OnGetAsync()
         {
+            //initerface de consulta, setando valores do banco de dsdos na variavel genreQuery
+            IQueryable<string> genreQuery = from m in _context.Movie
+                                                        orderby m.Genre
+                                                        select m.Genre;
+
             var movies = from m in _context.Movie
                         select m;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 movies = movies.Where(s => s.Title.Contains(SearchString));
             }
+
+            if(!string.IsNullOrEmpty(MovieGenre))
+            {
+                movies = movies.Where(g => g.Genre == MovieGenre);
+            }
+
+            //cria uma nova lista, guardando informações de consulta da base de dados!
+
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
 
             Movie = await movies.ToListAsync();
         }
