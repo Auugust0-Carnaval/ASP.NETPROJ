@@ -1,8 +1,7 @@
 
 @* essa anotacao é usada para especificar a URL de uma pagina, o parametro searchString, é o enpoint (pode ser usado ou nao) *@
-@* @page "{searchString?}"  *@
+@page "{searchString?}" 
 
-@page
 @model PAGESNET.Pages_Movies.IndexModel 
 
 @{
@@ -17,10 +16,15 @@
 
 <form>
     <p>
-        Title : <input type="text" asp-for="SearchString"> @*asp-for adiciona o value setado na propiedade*@
-        <input type="submit" value="filter">
+        <select class="form-select" asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Title: <input class="form-control" type="text" asp-for="SearchString" />
+        <input class="btn btn-outline-primary text-center" type="submit" value="Filter" />
     </p>
 </form>
+
+
 <table class="table">
     <thead>
         <tr>
