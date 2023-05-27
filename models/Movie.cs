@@ -29,7 +29,7 @@ namespace PAGESNET.models
         [Column(TypeName = "decimal(18,2)")] //Adiciona o tipo de coluna na base de dados usando EF, com 18 digitos e duas casa descimais
         public decimal Price { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-z\s]*$")] // o que pode ser usado na propriedade
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")] // o que pode ser usado na propriedade
         [Required] //requer uma inserção de info
         [StringLength(5)] // quantidade de caracteres
         public string Rating { get; set; } = string.Empty;
